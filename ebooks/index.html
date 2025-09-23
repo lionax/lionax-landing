@@ -1,52 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sempre Dá Pra Ser Feliz | LIONAX</title>
-  <meta name="description" content="Um livro transformador para quem sente que não aguenta mais. Descubra como recomeçar, mesmo quando tudo parece perdido.">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sempre Dá Pra Ser Feliz | LIONAX Studio</title>
+  <meta name="description" content="Um guia direto para quem está no limite e precisa recomeçar com passos simples e práticos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0e;--text:#e7e7ea;--muted:#b6b6bf;--brand:#f5b301;--brand-dark:#d99b00;--card:#13131a;--accent:#6c5ce7;
+    }
+    *{box-sizing:border-box} html,body{margin:0;padding:0} body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:32px 0}
+    .tag{display:inline-block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted);letter-spacing:.02em}
+    h1{font-size:48px;line-height:1.05;margin:12px 0 8px}
+    .sub{font-size:18px;color:var(--muted);max-width:56ch}
+    .cta{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:var(--brand);color:#111;padding:14px 20px;border-radius:12px;font-weight:800;box-shadow:0 8px 24px rgba(245,179,1,.25)}
+    .cta:hover{background:var(--brand-dark)}
+    .sec{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:22px}
+    .grid{display:grid;gap:16px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .kicker{font-weight:800;color:#fff;margin:0 0 6px}
+    ul.check{list-style:none;padding:0;margin:0} ul.check li{padding-left:28px;position:relative;margin:10px 0}
+    ul.check li:before{content:"✓";position:absolute;left:0;top:0;color:var(--brand);font-weight:800}
+    .cover{width:100%;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);background:#000}
+    .muted{color:var(--muted)}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .bar{position:sticky;bottom:0;z-index:50;display:none}
+    .bar .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;background:rgba(19,19,26,.9);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08);padding:10px 16px}
+    .bar .btn{background:var(--brand);color:#111;padding:10px 14px;border-radius:10px;font-weight:800}
+    footer{color:var(--muted);font-size:13px;padding:28px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,92,231,.12);color:#c9c6ff;border:1px solid rgba(108,92,231,.35);padding:8px 12px;border-radius:10px;font-size:13px}
+    .faq details{background:var(--card);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+    .faq summary{cursor:pointer;font-weight:600}
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.split{grid-template-columns:1fr}.bar{display:block} h1{font-size:38px}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Sempre Dá Pra Ser Feliz",
+    "brand":{"@type":"Brand","name":"LIONAX Studio"},
+    "description":"Guia prático para recomeçar quando tudo parece perdido.",
+    "image":["/ebooks/capa.jpg"],
+    "url":"https://lionax.io/ebooks/",
+    "offers":{
+      "@type":"Offer",
+      "url":"https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1",
+      "priceCurrency":"BRL",
+      "availability":"https://schema.org/InStock"
+    }
+  }
+  </script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
-  <div class="min-h-screen flex flex-col">
-    
-    <!-- Hero -->
-    <header class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-16 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Sempre Dá Pra Ser Feliz</h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto">
-        Como agir quando tudo parece perdido. Um livro para quem sente que não aguenta mais — mas ainda quer acreditar que pode recomeçar.
-      </p>
-      <a href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1" 
-         class="mt-6 inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-yellow-300 transition">
-         Comprar na Amazon
-      </a>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div>
+        <span class="tag">Livro • Saúde Emocional</span>
+        <h1>Sempre Dá Pra Ser Feliz</h1>
+        <p class="sub">Para quem está no limite: um caminho simples, direto e possível para sair do fundo do poço e retomar a vida com calma, consciência e força.</p>
+        <a class="cta" href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1" target="_blank" rel="noopener">
+          Garantir meu exemplar na Amazon →
+        </a>
+        <p class="muted" style="margin-top:10px">Compra segura pela Amazon. Leitura em qualquer dispositivo.</p>
+        <div style="margin-top:18px" class="badge">Leitura rápida • Exercícios simples • Efeito prático</div>
+      </div>
+      <div>
+        <!-- Suba a imagem da capa como /ebooks/capa.jpg -->
+        <img class="cover" src="/ebooks/capa.jpg" alt="Capa do livro Sempre Dá Pra Ser Feliz" />
+      </div>
     </header>
 
-    <!-- Conteúdo -->
-    <main class="flex-1 max-w-4xl mx-auto px-6 py-12">
-      <h2 class="text-2xl font-bold mb-4">O que você vai encontrar</h2>
-      <ul class="list-disc pl-6 space-y-2 mb-8">
-        <li>A dor que ninguém vê — e como enfrentá-la sem se culpar.</li>
-        <li>Por que parece que nunca vai passar — e o caminho para sair disso.</li>
-        <li>Como reprogramar sua mente e o coração.</li>
-        <li>Um plano real para escapar do fundo do poço.</li>
-        <li>Como voltar a amar sem se abandonar.</li>
-      </ul>
+    <section class="split">
+      <div class="sec">
+        <p class="kicker">Para quem é</p>
+        <ul class="check">
+          <li>Para quem está cansado de “forçar” ser forte e precisa de um roteiro simples para voltar a respirar.</li>
+          <li>Para quem sofreu uma perda, um término ou carrega uma tristeza silenciosa que ninguém entende.</li>
+          <li>Para quem quer ferramentas práticas de acalmar a mente e reorganizar o coração — sem papo enrolado.</li>
+        </ul>
+      </div>
+      <div class="sec">
+        <p class="kicker">O que você leva</p>
+        <ul class="check">
+          <li>Entende por que a dor não passa e como parar o looping mental.</li>
+          <li>Plano de fuga do fundo do poço em passos pequenos e possíveis.</li>
+          <li>Técnicas rápidas: âncora de segurança, diálogo interno e visualização.</li>
+          <li>Como amar de novo sem se abandonar.</li>
+        </ul>
+      </div>
+    </section>
 
-      <blockquote class="border-l-4 border-purple-500 pl-4 italic text-gray-700 mb-8">
-        “Este livro não é um manual. É um abraço com palavras. Um lembrete de que ainda existe um caminho.”:contentReference[oaicite:0]{index=0}
-      </blockquote>
+    <section style="margin-top:24px" class="sec">
+      <div class="grid grid-3">
+        <div>
+          <p class="kicker">Direto ao ponto</p>
+          <p class="muted">Texto limpo, capítulos curtos e aplicáveis. É pra ler e praticar na mesma hora.</p>
+        </div>
+        <div>
+          <p class="kicker">Aplicação real</p>
+          <p class="muted">Nada de teoria vazia: exercícios rápidos que mudam sua fisiologia e clareza.</p>
+        </div>
+        <div>
+          <p class="kicker">Recomeço possível</p>
+          <p class="muted">Não promete mágica. Mostra o próximo passo — e ele é viável.</p>
+        </div>
+      </div>
+    </section>
 
-      <a href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1"
-         class="block text-center bg-indigo-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:bg-indigo-500 transition">
-         Garantir meu exemplar
+    <section style="margin-top:24px" class="sec">
+      <p class="kicker">Um pouco do livro</p>
+      <p class="muted">Este não é um manual frio. É um abraço com palavras e um mapa simples para quando tudo parece escuro. Você aprende a reconhecer a dor sem se culpar, reprograma a mente que entra em alerta e dá pequenos passos que somam.</p>
+      <a class="cta" style="margin-top:10px" href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1" target="_blank" rel="noopener">Quero começar agora</a>
+    </section>
+
+    <section style="margin-top:24px" class="faq grid">
+      <div class="grid">
+        <details open><summary>Funciona mesmo se eu estiver “no fundo do poço”?</summary><p class="muted">Sim. O foco é micro-ações repetidas e seguras, não força de vontade. Você começa pequeno e ganha tração.</p></details>
+        <details><summary>Preciso de muito tempo pra aplicar?</summary><p class="muted">Não. Os exercícios levam de dois a cinco minutos e cabem no seu dia.</p></details>
+        <details><summary>Onde eu leio depois da compra?</summary><p class="muted">A compra é pela Amazon. Você lê no Kindle, celular, tablet ou computador.</p></details>
+      </div>
+    </section>
+
+    <section style="text-align:center;margin:32px 0">
+      <a class="cta" href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1" target="_blank" rel="noopener">
+        Comprar agora na Amazon →
       </a>
-    </main>
+      <p class="muted" style="margin-top:8px">Link oficial do eBook.</p>
+    </section>
 
-    <!-- Rodapé -->
-    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
-      <p>&copy; 2025 LIONAX Studio. Todos os direitos reservados.</p>
+    <footer>
+      © 2025 LIONAX Studio — Todos os direitos reservados.
     </footer>
+  </div>
+
+  <div class="bar">
+    <div class="wrap container">
+      <div><strong>Sempre Dá Pra Ser Feliz</strong><div class="muted" style="font-size:12px">Guia prático • Leitura rápida</div></div>
+      <a class="btn" href="https://www.amazon.com.br/SEMPRE-D%C3%81-PRA-SER-FELIZ-ebook/dp/B0FNLQDSN2/ref=sr_1_1?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&s=digital-text&sr=1-1" target="_blank" rel="noopener">Garantir meu exemplar</a>
+    </div>
   </div>
 </body>
 </html>
