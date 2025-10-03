@@ -80,6 +80,17 @@
     .form-note{color:#9e9581;font-size:12px;margin:4px 2px}
     .sr-only{position:absolute;left:-9999px}
 
+    /* BODY MARK (logo no corpo) */
+    .body-mark{padding:18px 20px}
+    .body-mark-inner{
+      max-width:1180px;margin:0 auto;border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:center
+    }
+    .body-mark img{
+      width:120px;height:auto;opacity:.9;filter:drop-shadow(0 0 16px rgba(214,204,180,.06));
+    }
+    @media(max-width:520px){ .body-mark img{width:96px} }
+
     footer{padding:28px 20px;color:var(--muted);border-top:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     /* Responsivo */
@@ -146,6 +157,13 @@
     </div>
   </header>
 
+  <!-- LOGO DISCRETO NO CORPO -->
+  <div class="body-mark">
+    <div class="body-mark-inner">
+      <img src="/logo.png" alt="LIONAX Studio">
+    </div>
+  </div>
+
   <!-- SERVIÇOS -->
   <section id="servicos" class="section">
     <div class="wrap">
@@ -194,10 +212,10 @@
     // ano
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // i18n: textos PT/EN
+    // i18n
     const t = {
       "pt": {
-        "nav": {"services":"Serviços","ebooks":"E-books","alg":"Manipulação Algorítmica","contact":"Contato"},
+        "nav":{"services":"Serviços","ebooks":"E-books","alg":"Manipulação Algorítmica","contact":"Contato"},
         "kicker":"Estúdio • Audiovisual • IA • Treinamentos • Consultoria",
         "hero":{"highlight":"Nós moldamos a percepção.","sub":"Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.","note":"Disponibilidade sob agenda. Atuação global. EN • PT • ES."},
         "cta":{"contact":"Contato"},
@@ -208,7 +226,7 @@
         "footer":{"tag":"Arquitetura da Percepção"}
       },
       "en": {
-        "nav": {"services":"Services","ebooks":"E-books","alg":"Algorithmic Steering","contact":"Contact"},
+        "nav":{"services":"Services","ebooks":"E-books","alg":"Algorithmic Steering","contact":"Contact"},
         "kicker":"Studio • Film • AI • Training • Advisory",
         "hero":{"highlight":"We shape perception.","sub":"High-impact film, bespoke AI and executive training. Strategy, execution and confidentiality. Measurable results.","note":"By appointment only. Global work. EN • PT • ES."},
         "cta":{"contact":"Contact"},
