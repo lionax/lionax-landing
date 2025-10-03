@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LIONAX Studio — Audiovisual, IA, Treinamentos e Consultoria</title>
+  <title>LIONAX Studio — Arquitetura da percepção</title>
   <meta name="description" content="Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Precisão, sigilo e entrega.">
   <link rel="canonical" href="https://lionax.io/">
   <meta name="theme-color" content="#1b1c1d">
@@ -130,7 +130,13 @@
     <div class="wrap grid hero-grid">
       <div>
         <div class="kicker" data-i18n="kicker">Estúdio • Audiovisual • IA • Treinamentos • Consultoria</div>
-        <h1>PODER É FORMA. <span style="color:var(--accent);font-weight:800" data-i18n="hero.highlight">Nós moldamos a percepção.</span></h1>
+
+        <!-- H1 corrigido: 100% i18n (sem texto fixo PT) -->
+        <h1>
+          <span data-i18n="hero.h1a"></span>
+          <span style="color:var(--accent);font-weight:800" data-i18n="hero.h1b"></span>
+        </h1>
+
         <p class="sub" data-i18n="hero.sub">Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.</p>
 
         <div class="cta-row">
@@ -210,7 +216,12 @@
       "pt": {
         "nav":{"services":"Serviços","ebooks":"E-books","alg":"Manipulação Algorítmica","contact":"Contato"},
         "kicker":"Estúdio • Audiovisual • IA • Treinamentos • Consultoria",
-        "hero":{"highlight":"Nós moldamos a percepção.","sub":"Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.","note":"Disponibilidade sob agenda. Atuação global. EN • PT • ES."},
+        "hero":{
+          "h1a":"PODER É FORMA.",
+          "h1b":"Moldamos a percepção.",
+          "sub":"Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.",
+          "note":"Disponibilidade sob agenda. Atuação global. EN • PT • ES."
+        },
         "cta":{"contact":"Contato"},
         "form":{"title":"Receba os códigos primeiro","nameLabel":"Seu nome","namePh":"Seu nome","emailLabel":"Seu e-mail","emailPh":"Seu e-mail","submit":"Quero Receber","note":"Sem spam. Você pode sair quando quiser."},
         "trust":"Confiabilidade • Precisão • Entrega",
@@ -221,7 +232,12 @@
       "en": {
         "nav":{"services":"Services","ebooks":"E-books","alg":"Algorithmic Steering","contact":"Contact"},
         "kicker":"Studio • Film • AI • Training • Advisory",
-        "hero":{"highlight":"We shape perception.","sub":"High-impact film, bespoke AI and executive training. Strategy, execution and confidentiality. Measurable results.","note":"By appointment only. Global work. EN • PT • ES."},
+        "hero":{
+          "h1a":"POWER IS FORM.",
+          "h1b":"We shape perception.",
+          "sub":"High-impact film, bespoke AI and executive training. Strategy, execution and confidentiality. Measurable results.",
+          "note":"By appointment only. Global work. EN • PT • ES."
+        },
         "cta":{"contact":"Contact"},
         "form":{"title":"Get the signals first","nameLabel":"Your name","namePh":"Your name","emailLabel":"Your email","emailPh":"Your email","submit":"Subscribe","note":"No spam. Unsubscribe anytime."},
         "trust":"Reliability • Precision • Delivery",
@@ -238,7 +254,11 @@
       "nav.alg": document.querySelector('[data-i18n="nav.alg"]'),
       "nav.contact": document.querySelector('[data-i18n="nav.contact"]'),
       "kicker": document.querySelector('[data-i18n="kicker"]'),
-      "hero.highlight": document.querySelector('[data-i18n="hero.highlight"]'),
+
+      // ATENÇÃO: trocamos hero.highlight por hero.h1a e hero.h1b
+      "hero.h1a": document.querySelector('[data-i18n="hero.h1a"]'),
+      "hero.h1b": document.querySelector('[data-i18n="hero.h1b"]'),
+
       "hero.sub": document.querySelector('[data-i18n="hero.sub"]'),
       "hero.note": document.querySelector('[data-i18n="hero.note"]'),
       "cta.contact": document.querySelector('[data-i18n="cta.contact"]'),
@@ -271,6 +291,7 @@
       const m = t[lang];
       if(!m) return;
       html.lang = (lang === 'en' ? 'en' : 'pt-BR');
+
       for(const k in elMap){
         const el = elMap[k];
         if(el){
