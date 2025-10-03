@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>LIONAX Studio — Audiovisual, IA, Treinamentos e Consultoria</title>
-  <meta name="description" content="LIONAX Studio. Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Manipulação algorítmica com precisão, sigilo e entrega de resultados." />
+  <meta name="description" content="Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Precisão, sigilo e entrega.">
   <link rel="canonical" href="https://lionax.io/" />
+  <link rel="alternate" hreflang="en" href="https://lionax.io/en/" />
   <meta name="theme-color" content="#1b1c1d" />
 
   <!-- Open Graph / Twitter -->
@@ -16,20 +17,20 @@
   <meta property="og:url" content="https://lionax.io/">
   <meta property="og:image" content="https://lionax.io/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LIONAX Studio — Arquitetura da Percepção">
+  <meta name="twitter:title" content="LIONAX Studio">
   <meta name="twitter:description" content="Audiovisual, IA, treinamentos e consultoria.">
   <meta name="twitter:image" content="https://lionax.io/logo.png">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "LIONAX Studio",
-    "url": "https://lionax.io/",
-    "logo": "https://lionax.io/logo.png",
-    "sameAs": ["https://youtube.com/@LIONAXhq"],
-    "email": "machado@lionax.io"
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"LIONAX Studio",
+    "url":"https://lionax.io/",
+    "logo":"https://lionax.io/logo.png",
+    "sameAs":["https://youtube.com/@LIONAXhq"],
+    "email":"machado@lionax.io"
   }
   </script>
 
@@ -37,63 +38,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#1b1c1d; --ink:#c5baa2; --muted:#9e9581; --line:#2a2b2c;
-      --brand:#c5baa2; --brand-strong:#e2d7bd;
+      --bg:#1b1c1d;     /* fundo */
+      --ink:#c5baa2;    /* “branco” */
+      --muted:#9e9581;
+      --line:#2a2b2c;
+      --accent:#e2d7bd; /* único destaque, discreto */
     }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+
     .wrap{max-width:1180px;margin:0 auto;padding:18px 20px}
+
     /* NAV */
     .nav{position:sticky;top:0;z-index:50;background:rgba(27,28,29,.8);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
     .navbar{display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:32px;height:32px}
-    .brand .t{font-family:Cinzel,serif;font-weight:800;letter-spacing:.8px}
-    .links{display:flex;gap:16px;font-weight:600}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--brand);color:#1b1c1d;background:var(--brand);border-radius:10px;font-weight:800}
-    .btn:hover{background:var(--brand-strong)}
-    .ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-    .ghost:hover{border-color:var(--brand);color:var(--brand)}
+    .brand img{width:30px;height:30px}
+    .brand .t{font-family:Cinzel,serif;font-weight:800;letter-spacing:.6px}
+    .links{display:flex;gap:14px;align-items:center}
+    .link{padding:10px 12px;border:1px solid transparent;border-radius:10px}
+    .link:hover{border-color:var(--line)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--accent);background:var(--accent);color:#1b1c1d;border-radius:10px;font-weight:800}
+    .btn:hover{filter:brightness(1.05)}
+
     /* HERO */
     .hero{position:relative;overflow:hidden}
     .hero .wrap{padding:64px 20px 40px}
     .grid{display:grid;gap:22px}
     .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center}
-    h1{font-family:Cinzel,serif;font-size:56px;line-height:1.04;margin:0 0 12px;text-wrap:balance}
+    h1{font-family:Cinzel,serif;font-size:54px;line-height:1.05;margin:0 0 10px}
     .kicker{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:12px}
     .sub{color:var(--muted);font-size:18px;max-width:60ch}
-    .sigils{position:absolute;inset:-20% -10% auto auto;pointer-events:none;opacity:.12;filter:blur(30px)}
+    .sigils{position:absolute;inset:-20% -10% auto auto;pointer-events:none;opacity:.10;filter:blur(28px)}
     .sigil{position:absolute;border:1px solid var(--line);border-radius:50%}
     .sigil.s1{width:520px;height:520px;right:-160px;top:-60px}
     .sigil.s2{width:260px;height:260px;right:140px;top:160px}
+
     .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:18px}
     .h3{font-family:Cinzel,serif;font-size:22px;margin:0 0 8px}
     .list{list-style:none;padding:0;margin:0}
     .list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
     .list li:last-child{border-bottom:none}
-    .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:var(--muted);font-size:12px}
     .section{padding:40px 0;border-top:1px solid var(--line)}
     .pillars{grid-template-columns:repeat(4,1fr)}
     .note{color:var(--muted);font-size:13px}
-    .center{text-align:center}
     .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    footer{padding:28px 0;color:var(--muted);border-top:1px solid var(--line);font-size:14px}
-    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:30px 0}
-    /* FORM */
-    .lead-form{max-width:520px;margin:0 auto;display:grid;gap:12px}
-    .lead-form input{
-      background:#0f1011;border:1px solid #2a2b2c;color:#c5baa2;padding:12px 14px;border-radius:10px;font-size:16px;outline:none
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:26px 0}
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Responsivo */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      h1{font-size:40px}
+      .pillars{grid-template-columns:1fr 1fr}
     }
-    .lead-form input:focus{border-color:#c5baa2;box-shadow:0 0 0 3px rgba(197,186,162,.15)}
-    .lead-form button{background:#c5baa2;color:#1b1c1d;font-weight:800;border:1px solid #c5baa2;padding:12px 16px;border-radius:10px;cursor:pointer}
-    .lead-form button:hover{filter:brightness(1.06)}
-    .form-note{color:#9e9581;font-size:12px;margin:4px 2px}
-    .sr-only{position:absolute;left:-9999px}
-    /* responsive */
-    @media (max-width:980px){.hero-grid{grid-template-columns:1fr}h1{font-size:40px}.pillars{grid-template-columns:1fr 1fr}}
-    @media (max-width:620px){.pillars{grid-template-columns:1fr}}
+    @media (max-width:640px){
+      .pillars{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -106,9 +112,12 @@
         <span class="t">LIONAX Studio</span>
       </a>
       <div class="links">
-        <a href="#servicos" class="ghost">Serviços</a>
-        <a href="#algoritmica" class="ghost">Manipulação Algorítmica</a>
-        <a href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener" class="btn">YouTube</a>
+        <a class="link" href="#servicos">Serviços</a>
+        <a class="link" href="/ebooks/">E-books</a>
+        <a class="link" href="#algoritmica">Manipulação Algorítmica</a>
+        <a class="link" href="/en/">EN</a>
+        <a class="btn" href="mailto:machado@lionax.io">Contato</a>
+        <a class="link" href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </nav>
@@ -119,28 +128,25 @@
     <div class="wrap grid hero-grid">
       <div>
         <div class="kicker">Estúdio • Audiovisual • IA • Treinamentos • Consultoria</div>
-        <h1>PODER É FORMA. <span style="color:#e2d7bd;font-weight:800">Nós moldamos a percepção.</span></h1>
+        <h1>PODER É FORMA. <span style="color:var(--accent);font-weight:800">Nós moldamos a percepção.</span></h1>
         <p class="sub">Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.</p>
         <div class="cta-row">
-          <a class="btn" href="mailto:machado@lionax.io">machado@lionax.io</a>
-          <a class="btn ghost" href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener">YouTube — @LIONAXhq</a>
+          <a class="btn" href="mailto:machado@lionax.io">Contato</a>
+          <a class="link" href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener">YouTube</a>
         </div>
-        <div style="margin-top:14px" class="note">Disponibilidade sob agenda. Atuação global. EN • PT • ES.</div>
+        <div style="margin-top:12px" class="note">Disponibilidade sob agenda. Atuação global. EN • PT • ES.</div>
       </div>
 
       <div class="card">
-        <div class="h3">Receba os códigos primeiro</div>
-        <!-- Formulário: mailto direto (sem backend) -->
-        <form action="mailto:machado@lionax.io" method="POST" enctype="text/plain" class="lead-form">
-          <label class="sr-only" for="lf-name">Seu nome</label>
-          <input id="lf-name" name="nome" type="text" placeholder="Seu nome" required>
-          <label class="sr-only" for="lf-email">Seu e-mail</label>
-          <input id="lf-email" name="email" type="email" placeholder="Seu e-mail" required inputmode="email" autocomplete="email">
-          <button type="submit">Quero Receber</button>
-          <p class="form-note">Sem spam. Você pode sair quando quiser.</p>
-        </form>
+        <div class="h3">Assinatura LIONAX</div>
+        <ul class="list">
+          <li><strong>Audiovisual</strong>: direção, roteiro, filmes, docs, comerciais e aulas.</li>
+          <li><strong>IA aplicada</strong>: automações, RAG, assistentes privados e observabilidade.</li>
+          <li><strong>Treinamentos</strong>: comunicação, escrita estratégica e promptcraft.</li>
+          <li><strong>Consultoria</strong>: diagnóstico, plano tático e KPIs/SLAs claros.</li>
+        </ul>
         <div class="divider"></div>
-        <div class="badge">Confiabilidade • Precisão • Entrega</div>
+        <div class="note">Confiabilidade • Precisão • Entrega</div>
       </div>
     </div>
   </header>
@@ -150,10 +156,10 @@
     <div class="wrap">
       <div class="h3" style="margin-bottom:12px">O que entregamos</div>
       <div class="grid pillars">
-        <div class="card"><div class="h3">Audiovisual</div><p class="note">Filmes, docs, comerciais e videoaulas. Roteiro, direção e pós com estética própria.</p></div>
-        <div class="card"><div class="h3">IA & Sistemas</div><p class="note">Assistentes internos, automações e dados com privacidade e observabilidade.</p></div>
-        <div class="card"><div class="h3">Treinamentos</div><p class="note">Times afiados: comunicação, prompts e decisão baseada em evidência.</p></div>
-        <div class="card"><div class="h3">Consultoria</div><p class="note">Diagnóstico, plano tático e execução com KPIs e SLAs claros.</p></div>
+        <div class="card"><div class="h3">Audiovisual</div><p class="note">Roteiro, direção, pós e identidade visual. Padrão cinematográfico.</p></div>
+        <div class="card"><div class="h3">IA & Sistemas</div><p class="note">Assistentes internos, pipelines e dados com privacidade e auditoria.</p></div>
+        <div class="card"><div class="h3">Treinamentos</div><p class="note">Times afiados: comunicação, decisão baseada em evidência e prompts.</p></div>
+        <div class="card"><div class="h3">Consultoria</div><p class="note">Diagnóstico, estratégia e execução com métricas de negócio.</p></div>
       </div>
     </div>
   </section>
@@ -162,24 +168,21 @@
   <section id="algoritmica" class="section">
     <div class="wrap">
       <div class="h3">Manipulação Algorítmica</div>
-      <p class="note">Dominamos comportamento de sistemas: feeds, buscas, recomendadores e modelos. Ajustamos entrada, contexto e sinal para alterar saída e alcance — com ética, compliance e trilhas de auditoria.</p>
+      <p class="note">Governamos sistemas complexos: feeds, buscas, recomendadores e modelos. Ajustamos contexto e sinal para alterar saída e alcance — com ética, compliance e trilhas de auditoria.</p>
       <div class="cta-row">
-        <a class="btn" href="mailto:machado@lionax.io?subject=Projeto%20Algor%C3%ADtmico%20-%20LIONAX">Iniciar diagnóstico</a>
-        <span class="badge">Sigilo contratual • Relatórios objetivos</span>
+        <a class="btn" href="mailto:machado@lionax.io?subject=Projeto%20-%20Manipula%C3%A7%C3%A3o%20Algor%C3%ADtmica">Iniciar diagnóstico</a>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="/logo.png" alt="LIONAX" style="width:22px;height:22px;opacity:.8">
-        <span>LIONAX Studio — Arquitetura da Percepção</span>
-      </div>
-      <div class="note">© <span id="y"></span> LIONAX. Todos os direitos reservados.</div>
+  <footer class="wrap">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="/logo.png" alt="LIONAX" style="width:20px;height:20px;opacity:.85">
+      <span>LIONAX Studio — Arquitetura da Percepção</span>
     </div>
+    <div class="note">© <span id="y"></span> LIONAX. Todos os direitos reservados.</div>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
