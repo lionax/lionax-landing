@@ -22,8 +22,12 @@
 
   <style>
     :root{
-      --bg:#1b1c1d; --ink:#c5baa2; --muted:#9e9581; --line:#2a2b2c;
-      --accent:#d6ccb4; /* único destaque, suave */
+      --bg:#1b1c1d;         /* fundo geral da página */
+      --ink:#c5baa2;        /* “branco” */
+      --muted:#9e9581;
+      --line:#2a2b2c;
+      --accent:#d6ccb4;     /* único destaque, suave */
+      --logo-band:#0f1011;  /* FAIXA atrás do logo (casar com fundo do arquivo logo.png) */
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
@@ -44,6 +48,12 @@
     .btn:hover{filter:brightness(1.05)}
     .lang{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer}
     .lang:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* LOGO NO TOPO (faixa) */
+    .logo-band{background:var(--logo-band);border-bottom:1px solid var(--line)}
+    .logo-band .inner{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;justify-content:center}
+    .logo-band img{width:120px;height:auto;opacity:.95;filter:drop-shadow(0 0 16px rgba(214,204,180,.06))}
+    @media(max-width:520px){ .logo-band img{width:96px} }
 
     /* HERO */
     .hero{position:relative;overflow:hidden}
@@ -80,17 +90,6 @@
     .form-note{color:#9e9581;font-size:12px;margin:4px 2px}
     .sr-only{position:absolute;left:-9999px}
 
-    /* BODY MARK (logo no corpo) */
-    .body-mark{padding:18px 20px}
-    .body-mark-inner{
-      max-width:1180px;margin:0 auto;border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:center
-    }
-    .body-mark img{
-      width:120px;height:auto;opacity:.9;filter:drop-shadow(0 0 16px rgba(214,204,180,.06));
-    }
-    @media(max-width:520px){ .body-mark img{width:96px} }
-
     footer{padding:28px 20px;color:var(--muted);border-top:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     /* Responsivo */
@@ -124,6 +123,13 @@
     </div>
   </nav>
 
+  <!-- LOGO DISCRETO NO TOPO (faixa com cor casada ao arquivo) -->
+  <div class="logo-band">
+    <div class="inner">
+      <img src="/logo.png" alt="LIONAX Studio">
+    </div>
+  </div>
+
   <!-- HERO -->
   <header id="top" class="hero">
     <div class="sigils"><div class="sigil s1"></div><div class="sigil s2"></div></div>
@@ -156,13 +162,6 @@
       </div>
     </div>
   </header>
-
-  <!-- LOGO DISCRETO NO CORPO -->
-  <div class="body-mark">
-    <div class="body-mark-inner">
-      <img src="/logo.png" alt="LIONAX Studio">
-    </div>
-  </div>
 
   <!-- SERVIÇOS -->
   <section id="servicos" class="section">
@@ -278,7 +277,6 @@
       const m = t[lang];
       if(!m) return;
       html.lang = (lang === 'en' ? 'en' : 'pt-BR');
-      // textos
       for(const k in elMap){
         const el = elMap[k];
         if(el){
@@ -288,7 +286,6 @@
           if(typeof val === 'string'){ el.textContent = val; }
         }
       }
-      // placeholders
       for(const k in placeMap){
         const el = placeMap[k];
         if(el){
@@ -298,7 +295,6 @@
           if(typeof val === 'string'){ el.placeholder = val; }
         }
       }
-      // título/descrição básicos
       document.title = (lang==='en')
         ? 'LIONAX Studio — Film, AI, Training & Advisory'
         : 'LIONAX Studio — Audiovisual, IA, Treinamentos e Consultoria';
@@ -307,11 +303,9 @@
           ? 'Film production, applied AI, executive training and advisory. Precision, confidentiality, delivery.'
           : 'Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Precisão, sigilo e entrega.'
       );
-      // botão idioma
       document.getElementById('langToggle').textContent = (lang==='en'?'PT':'EN');
     }
 
-    // init
     setLang('pt');
     document.getElementById('langToggle').addEventListener('click', ()=>{
       const to = (document.documentElement.lang === 'en') ? 'pt' : 'en';
