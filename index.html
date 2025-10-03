@@ -1,316 +1,199 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LIONAX Studio — Audiovisual, IA, Treinamentos e Consultoria</title>
-  <meta name="description" content="Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Precisão, sigilo e entrega.">
-  <link rel="canonical" href="https://lionax.io/">
-  <meta name="theme-color" content="#1b1c1d">
-
-  <!-- OG/Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="LIONAX Studio">
-  <meta property="og:description" content="Audiovisual, IA, treinamentos e consultoria.">
-  <meta property="og:image" content="https://lionax.io/logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIONAX Studio</title>
+  <meta name="description" content="LIONAX Studio – Produção audiovisual, inteligência artificial, treinamentos e consultoria. Dominamos a manipulação algorítmica e decodificamos estruturas ocultas.">
   <style>
-    :root{
-      --bg:#1b1c1d;         /* fundo geral da página */
-      --ink:#c5baa2;        /* “branco” */
-      --muted:#9e9581;
-      --line:#2a2b2c;
-      --accent:#d6ccb4;     /* único destaque, suave */
-      --logo-band:#0f1011;  /* FAIXA atrás do logo (casar com fundo do arquivo logo.png) */
+    :root {
+      --fundo: #1b1c1d;
+      --destaque: #c5baa2;
+      --texto: #e0e0e0;
+      --botao: #c5baa2;
+      --botao-texto: #1b1c1d;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
-    .wrap{max-width:1180px;margin:0 auto;padding:18px 20px}
 
-    /* NAV */
-    .nav{position:sticky;top:0;z-index:50;background:rgba(27,28,29,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line)}
-    .navbar{display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:28px;height:28px}
-    .brand .t{font-family:Cinzel,serif;font-weight:800;letter-spacing:.6px}
-    .links{display:flex;gap:14px;align-items:center}
-    .link{padding:10px 12px;border:1px solid transparent;border-radius:10px}
-    .link:hover{border-color:var(--line)}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border:1px solid var(--accent);background:var(--accent);color:#1b1c1d;border-radius:10px;font-weight:800}
-    .btn:hover{filter:brightness(1.05)}
-    .lang{border:1px solid var(--line);background:transparent;color:var(--ink);padding:8px 12px;border-radius:10px;cursor:pointer}
-    .lang:hover{border-color:var(--accent);color:var(--accent)}
-
-    /* LOGO NO TOPO (faixa) */
-    .logo-band{background:var(--logo-band);border-bottom:1px solid var(--line)}
-    .logo-band .inner{max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;justify-content:center}
-    .logo-band img{width:120px;height:auto;opacity:.95;filter:drop-shadow(0 0 16px rgba(214,204,180,.06))}
-    @media(max-width:520px){ .logo-band img{width:96px} }
-
-    /* HERO */
-    .hero{position:relative;overflow:hidden}
-    .hero .wrap{padding:64px 20px 40px}
-    .grid{display:grid;gap:22px}
-    .hero-grid{grid-template-columns:1.1fr .9fr;align-items:center}
-    h1{font-family:Cinzel,serif;font-size:54px;line-height:1.05;margin:0 0 10px}
-    .kicker{font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-size:12px}
-    .sub{color:var(--muted);font-size:18px;max-width:60ch}
-    .sigils{position:absolute;inset:-20% -10% auto auto;pointer-events:none;opacity:.10;filter:blur(28px)}
-    .sigil{position:absolute;border:1px solid var(--line);border-radius:50%}
-    .sigil.s1{width:520px;height:520px;right:-160px;top:-60px}
-    .sigil.s2{width:260px;height:260px;right:140px;top:160px}
-
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:18px}
-    .h3{font-family:Cinzel,serif;font-size:22px;margin:0 0 8px}
-    .list{list-style:none;padding:0;margin:0}
-    .list li{display:flex;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line)}
-    .list li:last-child{border-bottom:none}
-    .section{padding:40px 0;border-top:1px solid var(--line)}
-    .pillars{grid-template-columns:repeat(4,1fr)}
-    .note{color:var(--muted);font-size:13px}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:26px 0}
-
-    /* FORM */
-    .lead-form{max-width:520px;margin:0 auto;display:grid;gap:12px}
-    .lead-form input{
-      background:#0f1011;border:1px solid #2a2b2c;color:#c5baa2;padding:12px 14px;border-radius:10px;font-size:16px;outline:none
+    body {
+      margin: 0;
+      font-family: "Montserrat", sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
     }
-    .lead-form input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(214,204,180,.15)}
-    .lead-form button{background:var(--accent);color:#1b1c1d;font-weight:800;border:1px solid var(--accent);padding:12px 16px;border-radius:10px;cursor:pointer}
-    .lead-form button:hover{filter:brightness(1.05)}
-    .form-note{color:#9e9581;font-size:12px;margin:4px 2px}
-    .sr-only{position:absolute;left:-9999px}
 
-    footer{padding:28px 20px;color:var(--muted);border-top:1px solid var(--line);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-
-    /* Responsivo */
-    @media (max-width:980px){
-      .hero-grid{grid-template-columns:1fr}
-      h1{font-size:40px}
-      .pillars{grid-template-columns:1fr 1fr}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+      background: var(--fundo);
+      border-bottom: 1px solid rgba(197,186,162,0.2);
     }
-    @media (max-width:640px){
-      .pillars{grid-template-columns:1fr}
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--texto);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--destaque);
+    }
+
+    .lang-toggle {
+      cursor: pointer;
+      padding: 6px 12px;
+      border: 1px solid var(--destaque);
+      border-radius: 4px;
+      margin-left: 20px;
+      color: var(--destaque);
+      background: transparent;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      color: var(--destaque);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--texto);
+    }
+
+    .formulario {
+      margin: 60px auto;
+      max-width: 400px;
+      background: #222;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .formulario h2 {
+      color: var(--destaque);
+      margin-bottom: 15px;
+    }
+
+    .formulario input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .formulario button {
+      width: 100%;
+      padding: 14px;
+      background: var(--botao);
+      color: var(--botao-texto);
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .formulario button:hover {
+      background: #b8a98d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(197,186,162,0.2);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--destaque);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="wrap navbar">
-      <a class="brand" href="#top">
-        <img src="/logo.png" alt="LIONAX Studio">
-        <span class="t">LIONAX Studio</span>
-      </a>
-      <div class="links">
-        <a class="link" href="#servicos" data-i18n="nav.services">Serviços</a>
-        <a class="link" href="/ebooks/" data-i18n="nav.ebooks">E-books</a>
-        <a class="link" href="#algoritmica" data-i18n="nav.alg">Manipulação Algorítmica</a>
-        <button class="lang" id="langToggle">EN</button>
-        <a class="btn" href="mailto:machado@lionax.io" data-i18n="nav.contact">Contato</a>
-        <a class="link" href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener">YouTube</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- LOGO DISCRETO NO TOPO (faixa com cor casada ao arquivo) -->
-  <div class="logo-band">
-    <div class="inner">
-      <img src="/logo.png" alt="LIONAX Studio">
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <header id="top" class="hero">
-    <div class="sigils"><div class="sigil s1"></div><div class="sigil s2"></div></div>
-    <div class="wrap grid hero-grid">
-      <div>
-        <div class="kicker" data-i18n="kicker">Estúdio • Audiovisual • IA • Treinamentos • Consultoria</div>
-        <h1>PODER É FORMA. <span style="color:var(--accent);font-weight:800" data-i18n="hero.highlight">Nós moldamos a percepção.</span></h1>
-        <p class="sub" data-i18n="hero.sub">Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.</p>
-
-        <div class="cta-row">
-          <a class="btn" href="mailto:machado@lionax.io" data-i18n="cta.contact">Contato</a>
-          <a class="link" href="https://youtube.com/@LIONAXhq" target="_blank" rel="noopener">YouTube</a>
-        </div>
-
-        <div style="margin-top:12px" class="note" data-i18n="hero.note">Disponibilidade sob agenda. Atuação global. EN • PT • ES.</div>
-      </div>
-
-      <div class="card">
-        <div class="h3" data-i18n="form.title">Receba os códigos primeiro</div>
-        <form action="mailto:machado@lionax.io" method="POST" enctype="text/plain" class="lead-form">
-          <label class="sr-only" for="lf-name" data-i18n="form.nameLabel">Seu nome</label>
-          <input id="lf-name" name="nome" type="text" placeholder="Seu nome" required data-i18n-placeholder="form.namePh">
-          <label class="sr-only" for="lf-email" data-i18n="form.emailLabel">Seu e-mail</label>
-          <input id="lf-email" name="email" type="email" placeholder="Seu e-mail" required inputmode="email" autocomplete="email" data-i18n-placeholder="form.emailPh">
-          <button type="submit" data-i18n="form.submit">Quero Receber</button>
-          <p class="form-note" data-i18n="form.note">Sem spam. Você pode sair quando quiser.</p>
-        </form>
-        <div class="divider"></div>
-        <div class="note" data-i18n="trust">Confiabilidade • Precisão • Entrega</div>
-      </div>
-    </div>
+  <header>
+    <img src="logo.png" alt="LIONAX Studio Logo">
+    <nav>
+      <a href="#">Sobre</a>
+      <a href="#">Códigos</a>
+      <a href="#">Materiais</a>
+      <a href="#">Contato</a>
+      <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    </nav>
   </header>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="section">
-    <div class="wrap">
-      <div class="h3" style="margin-bottom:12px" data-i18n="services.title">O que entregamos</div>
-      <div class="grid pillars">
-        <div class="card">
-          <div class="h3" data-i18n="services.avTitle">Audiovisual</div>
-          <p class="note" data-i18n="services.avDesc">Roteiro, direção, pós e identidade visual. Padrão cinematográfico.</p>
-        </div>
-        <div class="card">
-          <div class="h3" data-i18n="services.aiTitle">IA & Sistemas</div>
-          <p class="note" data-i18n="services.aiDesc">Assistentes internos, pipelines e dados com privacidade e auditoria.</p>
-        </div>
-        <div class="card">
-          <div class="h3" data-i18n="services.trTitle">Treinamentos</div>
-          <p class="note" data-i18n="services.trDesc">Times afiados: comunicação, decisão baseada em evidência e prompts.</p>
-        </div>
-        <div class="card">
-          <div class="h3" data-i18n="services.consTitle">Consultoria</div>
-          <p class="note" data-i18n="services.consDesc">Diagnóstico, estratégia e execução com métricas de negócio.</p>
-        </div>
-      </div>
-    </div>
+  <section class="hero">
+    <h1 id="titulo">Arquitetura da Percepção</h1>
+    <p id="descricao">
+      LIONAX Studio é um estúdio de produção audiovisual, inteligência artificial, treinamentos e consultoria.
+      Nossa essência está na manipulação algorítmica e no decifrar de estruturas ocultas, unindo estética, poder e resultado.
+    </p>
   </section>
 
-  <!-- MANIPULAÇÃO ALGORÍTMICA -->
-  <section id="algoritmica" class="section">
-    <div class="wrap">
-      <div class="h3" data-i18n="alg.title">Manipulação Algorítmica</div>
-      <p class="note" data-i18n="alg.desc">Governamos sistemas complexos: feeds, buscas, recomendadores e modelos. Ajustamos contexto e sinal para alterar saída e alcance — com ética, compliance e trilhas de auditoria.</p>
-      <div class="cta-row">
-        <a class="btn" href="mailto:machado@lionax.io?subject=Projeto%20-%20Manipula%C3%A7%C3%A3o%20Algor%C3%ADtmica" data-i18n="alg.cta">Iniciar diagnóstico</a>
-      </div>
-    </div>
+  <section class="formulario">
+    <h2 id="formTitulo">Receba os códigos primeiro</h2>
+    <p id="formDesc">Cadastre-se para relatórios, segredos e material inédito.</p>
+    <input type="text" id="nome" placeholder="Seu nome">
+    <input type="email" id="email" placeholder="Seu e-mail">
+    <button id="formBotao">Quero Receber</button>
   </section>
 
-  <footer class="wrap">
-    <div style="display:flex;align-items:center;gap:10px">
-      <img src="/logo.png" alt="LIONAX" style="width:20px;height:20px;opacity:.85">
-      <span>LIONAX Studio — <span data-i18n="footer.tag">Arquitetura da Percepção</span></span>
-    </div>
-    <div class="note">© <span id="y"></span> LIONAX. All rights reserved.</div>
+  <footer>
+    <p>
+      <a href="https://youtube.com/@LIONAXhq" target="_blank">YouTube</a> |
+      <a href="mailto:machado@lionax.io">Contato</a>
+    </p>
+    <p id="rodape">Nada aqui é por acaso. LIONAX Studio © 2025</p>
   </footer>
 
   <script>
-    // ano
-    document.getElementById('y').textContent = new Date().getFullYear();
+    let lang = "pt";
 
-    // i18n
-    const t = {
-      "pt": {
-        "nav":{"services":"Serviços","ebooks":"E-books","alg":"Manipulação Algorítmica","contact":"Contato"},
-        "kicker":"Estúdio • Audiovisual • IA • Treinamentos • Consultoria",
-        "hero":{"highlight":"Nós moldamos a percepção.","sub":"Audiovisual de alto impacto, IA sob medida e treinamento executivo. Estratégia, execução e sigilo. Resultados mensuráveis.","note":"Disponibilidade sob agenda. Atuação global. EN • PT • ES."},
-        "cta":{"contact":"Contato"},
-        "form":{"title":"Receba os códigos primeiro","nameLabel":"Seu nome","namePh":"Seu nome","emailLabel":"Seu e-mail","emailPh":"Seu e-mail","submit":"Quero Receber","note":"Sem spam. Você pode sair quando quiser."},
-        "trust":"Confiabilidade • Precisão • Entrega",
-        "services":{"title":"O que entregamos","avTitle":"Audiovisual","avDesc":"Roteiro, direção, pós e identidade visual. Padrão cinematográfico.","aiTitle":"IA & Sistemas","aiDesc":"Assistentes internos, pipelines e dados com privacidade e auditoria.","trTitle":"Treinamentos","trDesc":"Times afiados: comunicação, decisão baseada em evidência e prompts.","consTitle":"Consultoria","consDesc":"Diagnóstico, estratégia e execução com métricas de negócio."},
-        "alg":{"title":"Manipulação Algorítmica","desc":"Governamos sistemas complexos: feeds, buscas, recomendadores e modelos. Ajustamos contexto e sinal para alterar saída e alcance — com ética, compliance e trilhas de auditoria.","cta":"Iniciar diagnóstico"},
-        "footer":{"tag":"Arquitetura da Percepção"}
-      },
-      "en": {
-        "nav":{"services":"Services","ebooks":"E-books","alg":"Algorithmic Steering","contact":"Contact"},
-        "kicker":"Studio • Film • AI • Training • Advisory",
-        "hero":{"highlight":"We shape perception.","sub":"High-impact film, bespoke AI and executive training. Strategy, execution and confidentiality. Measurable results.","note":"By appointment only. Global work. EN • PT • ES."},
-        "cta":{"contact":"Contact"},
-        "form":{"title":"Get the signals first","nameLabel":"Your name","namePh":"Your name","emailLabel":"Your email","emailPh":"Your email","submit":"Subscribe","note":"No spam. Unsubscribe anytime."},
-        "trust":"Reliability • Precision • Delivery",
-        "services":{"title":"What we deliver","avTitle":"Film","avDesc":"Script, direction, post and identity. Cinematic standards.","aiTitle":"AI & Systems","aiDesc":"Internal assistants, pipelines and data with privacy & audit.","trTitle":"Training","trDesc":"Sharper teams: communication, evidence-based decisions, prompts.","consTitle":"Advisory","consDesc":"Diagnosis, strategy and execution with business metrics."},
-        "alg":{"title":"Algorithmic Steering","desc":"We govern complex systems—feeds, search, recommenders and models. We tune context and signals to shift output and reach—with ethics, compliance and audit trails.","cta":"Start diagnosis"},
-        "footer":{"tag":"Perception Architecture"}
+    function toggleLang() {
+      if (lang === "pt") {
+        document.querySelector("#titulo").innerText = "Architecture of Perception";
+        document.querySelector("#descricao").innerText =
+          "LIONAX Studio is a powerhouse in audiovisual production, artificial intelligence, training, and consulting. Our core lies in algorithmic manipulation and decoding hidden structures, merging aesthetics, power, and results.";
+        document.querySelector("#formTitulo").innerText = "Get the codes first";
+        document.querySelector("#formDesc").innerText = "Sign up for reports, secrets, and exclusive material.";
+        document.querySelector("#formBotao").innerText = "Subscribe Now";
+        document.querySelector("#rodape").innerText = "Nothing here is by chance. LIONAX Studio © 2025";
+        document.querySelector(".lang-toggle").innerText = "PT";
+        lang = "en";
+      } else {
+        document.querySelector("#titulo").innerText = "Arquitetura da Percepção";
+        document.querySelector("#descricao").innerText =
+          "LIONAX Studio é um estúdio de produção audiovisual, inteligência artificial, treinamentos e consultoria. Nossa essência está na manipulação algorítmica e no decifrar de estruturas ocultas, unindo estética, poder e resultado.";
+        document.querySelector("#formTitulo").innerText = "Receba os códigos primeiro";
+        document.querySelector("#formDesc").innerText = "Cadastre-se para relatórios, segredos e material inédito.";
+        document.querySelector("#formBotao").innerText = "Quero Receber";
+        document.querySelector("#rodape").innerText = "Nada aqui é por acaso. LIONAX Studio © 2025";
+        document.querySelector(".lang-toggle").innerText = "EN";
+        lang = "pt";
       }
-    };
-
-    const html = document.documentElement;
-    const elMap = {
-      "nav.services": document.querySelector('[data-i18n="nav.services"]'),
-      "nav.ebooks": document.querySelector('[data-i18n="nav.ebooks"]'),
-      "nav.alg": document.querySelector('[data-i18n="nav.alg"]'),
-      "nav.contact": document.querySelector('[data-i18n="nav.contact"]'),
-      "kicker": document.querySelector('[data-i18n="kicker"]'),
-      "hero.highlight": document.querySelector('[data-i18n="hero.highlight"]'),
-      "hero.sub": document.querySelector('[data-i18n="hero.sub"]'),
-      "hero.note": document.querySelector('[data-i18n="hero.note"]'),
-      "cta.contact": document.querySelector('[data-i18n="cta.contact"]'),
-      "form.title": document.querySelector('[data-i18n="form.title"]'),
-      "form.nameLabel": document.querySelector('[data-i18n="form.nameLabel"]'),
-      "form.emailLabel": document.querySelector('[data-i18n="form.emailLabel"]'),
-      "form.submit": document.querySelector('[data-i18n="form.submit"]'),
-      "form.note": document.querySelector('[data-i18n="form.note"]'),
-      "trust": document.querySelector('[data-i18n="trust"]'),
-      "services.title": document.querySelector('[data-i18n="services.title"]'),
-      "services.avTitle": document.querySelector('[data-i18n="services.avTitle"]'),
-      "services.avDesc": document.querySelector('[data-i18n="services.avDesc"]'),
-      "services.aiTitle": document.querySelector('[data-i18n="services.aiTitle"]'),
-      "services.aiDesc": document.querySelector('[data-i18n="services.aiDesc"]'),
-      "services.trTitle": document.querySelector('[data-i18n="services.trTitle"]'),
-      "services.trDesc": document.querySelector('[data-i18n="services.trDesc"]'),
-      "services.consTitle": document.querySelector('[data-i18n="services.consTitle"]'),
-      "services.consDesc": document.querySelector('[data-i18n="services.consDesc"]'),
-      "alg.title": document.querySelector('[data-i18n="alg.title"]'),
-      "alg.desc": document.querySelector('[data-i18n="alg.desc"]'),
-      "alg.cta": document.querySelector('[data-i18n="alg.cta"]'),
-      "footer.tag": document.querySelector('[data-i18n="footer.tag"]'),
-    };
-    const placeMap = {
-      "form.namePh": document.querySelector('[data-i18n-placeholder="form.namePh"]'),
-      "form.emailPh": document.querySelector('[data-i18n-placeholder="form.emailPh"]'),
-    };
-
-    function setLang(lang){
-      const m = t[lang];
-      if(!m) return;
-      html.lang = (lang === 'en' ? 'en' : 'pt-BR');
-      for(const k in elMap){
-        const el = elMap[k];
-        if(el){
-          const segs = k.split('.');
-          let val = m;
-          segs.forEach(s=> val = val && val[s]);
-          if(typeof val === 'string'){ el.textContent = val; }
-        }
-      }
-      for(const k in placeMap){
-        const el = placeMap[k];
-        if(el){
-          const segs = k.split('.');
-          let val = m;
-          segs.forEach(s=> val = val && val[s]);
-          if(typeof val === 'string'){ el.placeholder = val; }
-        }
-      }
-      document.title = (lang==='en')
-        ? 'LIONAX Studio — Film, AI, Training & Advisory'
-        : 'LIONAX Studio — Audiovisual, IA, Treinamentos e Consultoria';
-      document.querySelector('meta[name="description"]')?.setAttribute('content',
-        (lang==='en')
-          ? 'Film production, applied AI, executive training and advisory. Precision, confidentiality, delivery.'
-          : 'Estúdio de produção audiovisual, IA aplicada, treinamentos e consultoria. Precisão, sigilo e entrega.'
-      );
-      document.getElementById('langToggle').textContent = (lang==='en'?'PT':'EN');
     }
-
-    setLang('pt');
-    document.getElementById('langToggle').addEventListener('click', ()=>{
-      const to = (document.documentElement.lang === 'en') ? 'pt' : 'en';
-      setLang(to);
-    });
   </script>
 </body>
 </html>
